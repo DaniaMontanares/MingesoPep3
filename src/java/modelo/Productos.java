@@ -95,6 +95,10 @@ public class Productos implements Serializable {
         this.telefonoAnunciante = telefonoAnunciante;
     }
 
+    /**
+     * 
+     * @return 
+     */
     public Integer getCodigo() {
         return codigo;
     }
