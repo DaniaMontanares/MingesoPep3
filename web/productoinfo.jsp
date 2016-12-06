@@ -10,6 +10,7 @@
     <body action="ProductoServlet">
         <h1>Información Productos </h1>
         <h2>Holaa</h2>
+        <h3>Hola2</h3>
         <form action="./ProductoServlet" method="POST">
             <table>
                 <tr>
