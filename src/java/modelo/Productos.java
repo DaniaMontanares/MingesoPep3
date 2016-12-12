@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Productos.findByFoto", query = "SELECT p FROM Productos p WHERE p.foto = :foto")
     , @NamedQuery(name = "Productos.findByCiudad", query = "SELECT p FROM Productos p WHERE p.ciudad = :ciudad")
     , @NamedQuery(name = "Productos.findByNombreAnunciante", query = "SELECT p FROM Productos p WHERE p.nombreAnunciante = :nombreAnunciante")
-    , @NamedQuery(name = "Productos.findByTelefonoAnunciante", query = "SELECT p FROM Productos p WHERE p.telefonoAnunciante = :telefonoAnunciante")})
+    , @NamedQuery(name = "Productos.findByCorreoAnunciante", query = "SELECT p FROM Productos p WHERE p.correoAnunciante = :correoAnunciante")})
 public class Productos implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -74,8 +74,9 @@ public class Productos implements Serializable {
     private String nombreAnunciante;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "telefono_anunciante", nullable = false)
-    private int telefonoAnunciante;
+    @Size(min = 1, max = 64)
+    @Column(name = "correo_anunciante", nullable = false)
+    private String correoAnunciante;
 
     public Productos() {
     }
@@ -84,7 +85,7 @@ public class Productos implements Serializable {
         this.codigo = codigo;
     }
 
-    public Productos(Integer codigo, String nombre, String descripcion, int precio, String foto, String ciudad, String nombreAnunciante, int telefonoAnunciante) {
+    public Productos(Integer codigo, String nombre, String descripcion, int precio, String foto, String ciudad, String nombreAnunciante, String correoAnunciante) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -92,7 +93,7 @@ public class Productos implements Serializable {
         this.foto = foto;
         this.ciudad = ciudad;
         this.nombreAnunciante = nombreAnunciante;
-        this.telefonoAnunciante = telefonoAnunciante;
+        this.correoAnunciante = correoAnunciante;
     }
 
     /**
@@ -155,12 +156,12 @@ public class Productos implements Serializable {
         this.nombreAnunciante = nombreAnunciante;
     }
 
-    public int getTelefonoAnunciante() {
-        return telefonoAnunciante;
+    public String getCorreoAnunciante() {
+        return correoAnunciante;
     }
 
-    public void setTelefonoAnunciante(int telefonoAnunciante) {
-        this.telefonoAnunciante = telefonoAnunciante;
+    public void setCorreoAnunciante(String correoAnunciante) {
+        this.correoAnunciante = correoAnunciante;
     }
 
     @Override

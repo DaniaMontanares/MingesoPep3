@@ -55,16 +55,12 @@ public class ProductoServlet extends HttpServlet {
         String foto=request.getParameter("foto");
         String ciudad=request.getParameter("ciudad");
         String nombreAnunciante=request.getParameter("nombreAnunciante");
-        String telefonoAnuncianteStr=request.getParameter("telefonoAnunciante");
-        int telefonoAnunciante=0;
-        if(telefonoAnuncianteStr!=null && !telefonoAnuncianteStr.equals("")){
-            telefonoAnunciante=Integer.parseInt(telefonoAnuncianteStr);    
-        }
-        Productos producto = new Productos(codigo, nombre, descripcion, precio, foto, ciudad, nombreAnunciante, telefonoAnunciante);
+        String correoAnunciante=request.getParameter("correoAnunciante");
+        Productos producto = new Productos(codigo, nombre, descripcion, precio, foto, ciudad, nombreAnunciante, correoAnunciante);
         
-        if("Add".equalsIgnoreCase(action)){
+        if("Agregar".equalsIgnoreCase(action)){
             productoFacade.addProducto(producto);
-        }else if("Edit".equalsIgnoreCase(action)){
+        }else if("Editar".equalsIgnoreCase(action)){
             productoFacade.editProducto(producto);
         }else if("Delete".equalsIgnoreCase(action)){
             productoFacade.deleteProducto(codigo);

@@ -132,10 +132,10 @@ public class ProductosTest {
      */
     @Test
     public void testSetTelefonoAnunciante() {
-        System.out.println("setTelefonoAnunciante");
-        int telefonoAnunciante = 0;
+        System.out.println("setCorreoAnunciante");
+        String correoAnunciante = "";
         Productos instance = new Productos();
-        instance.setTelefonoAnunciante(telefonoAnunciante);
+        instance.setCorreoAnunciante(correoAnunciante);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
